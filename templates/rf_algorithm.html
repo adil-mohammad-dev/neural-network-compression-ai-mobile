@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Algorithm Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .button {
+            padding: 10px 20px;
+            color: white;
+            background-color: #42a5f5;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .button:hover {
+            background-color: #1e88e5;
+        }
+
+        .section-header {
+            background-color: #42a5f5;
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .accuracy, .metric, .algorithm-details {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .accuracy {
+            padding: 12px;
+            font-size: 1.5em;
+            color: #2e7d32;
+            background-color: #e8f5e9;
+            border-radius: 15px;
+            border: 3px solid #81c784;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .metric {
+            background-color: #fff3e0;
+            border: 2px solid #ffcc80;
+            font-size: 1.1em;
+            color: #e65100;
+        }
+
+        .algorithm-details {
+            background-color: #e3f2fd;
+            border: 2px solid #90caf9;
+            font-size: 1.1em;
+            color: #1976d2;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            background-color: #f1f8e9;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #81c784;
+        }
+
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .metrics-table th, .metrics-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .metrics-table th {
+            background-color: #42a5f5;
+            color: white;
+        }
+
+        .metrics-table td {
+            background-color: #f9f9f9;
+        }
+
+        .metrics-table td.success {
+            background-color: #e8f5e9;
+        }
+
+        .metrics-table td.fail {
+            background-color: #ffebee;
+        }
+
+        .graph-section {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-top: 30px;
+        }
+
+        .graph-section h2 {
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Forest Algorithm</h1>
+    <p>This page provides details and results for the {{ algorithm_name }} algorithm, focusing on the Random Forest model. Below, you'll find an overview of the algorithm, key features, evaluation metrics, and how it performs in real-world tasks.</p>
+    
+    <!-- Algorithm Description -->
+    <div class="algorithm-details">
+        <div class="section-header">Algorithm Overview</div>
+        <p>The RF algorithm is a powerful machine learning technique that is widely used for both classification and regression tasks. It is part of the ensemble learning family, where multiple models (in this case, decision trees) are combined to create a more robust and accurate prediction.</p>
+        <p>Random Forest works by constructing a collection, or "forest", of decision trees. Each tree is trained on a random subset of the training data, and during prediction, the final result is obtained by averaging the predictions of all the individual trees (for regression) or by voting (for classification). This process helps to reduce overfitting and improve the overall accuracy and generalization of the model.</p>
+        <p>One of the key strengths of Random Forest is its ability to handle a large number of features and provide feature importance, helping to identify the most influential variables in the dataset.</p>
+    </div>
+    
+    <!-- Key Features of the Random Forest Algorithm -->
+    <div class="algorithm-details">
+        <div class="section-header">Key Features</div>
+        <ul class="feature-list">
+            <li><strong>Robustness:</strong> Random Forest is highly resistant to overfitting, especially with large datasets, and tends to perform well on a wide variety of data types.</li>
+            <li><strong>Feature Importance:</strong> Random Forest can calculate feature importance scores, allowing for easy identification of the most relevant features in the model.</li>
+            <li><strong>Handles Missing Values:</strong> Random Forest can handle datasets with missing values without the need for imputation.</li>
+            <li><strong>Parallel Processing:</strong> Each decision tree is built independently, making Random Forest highly suitable for parallel processing and scalable to large datasets.</li>
+            <li><strong>Versatility:</strong> Random Forest can be used for both classification and regression problems, making it a versatile tool for machine learning tasks.</li>
+        </ul>
+    </div>
+    
+    <!-- Accuracy Section -->
+    <div class="accuracy">
+        <strong>Accuracy: </strong>{{ rf_accuracy }}%
+    </div>
+
+    
+    <!-- Go Back to Dashboard -->
+    <a href="{{ url_for('dashboard') }}" class="button">Go Back to Dashboard</a>
+
+</body>
+</html>
