@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Successful</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; text-align: center; }
+        .button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Signup Successful!</h1>
+    <p>Welcome, {{ username }}! You have successfully signed up.</p>
+    <a href="/login" class="button">Login Now</a>
+</body>
+</html>
