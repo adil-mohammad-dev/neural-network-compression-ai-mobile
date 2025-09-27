@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convolutional Neural Network (CNN) Model Accuracy</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00bcd4, #3f51b5);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            font-size: 2.5em;
+            color: #ffeb3b;
+            margin-bottom: 20px;
+        }
+        .lead {
+            font-size: 1.2em;
+            color: #e0e0e0;
+        }
+        h3 {
+            font-size: 3em;
+            color: #4caf50;
+            font-weight: bold;
+            margin-top: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .progress {
+            height: 25px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .btn {
+            margin-top: 30px;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9em;
+            color: #ddd;
+        }
+        .cnn-description {
+            background-color: rgba(0, 150, 136, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .cnn-description h4 {
+            font-size: 1.8em;
+            color: #ffeb3b;
+        }
+        .cnn-description p {
+            font-size: 1.1em;
+            color: #e0e0e0;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Convolutional Neural Network (CNN) Model Accuracy</h2>
+        <p class="lead">The accuracy of the CNN model is:</p>
+        <h3>{{ cnn_accuracy }}%</h3>
+
+        <!-- Progress Bar -->
+        <div class="progress mt-4">
+            <div class="progress-bar" role="progressbar" style="width: {{ cnn_accuracy }}%;" aria-valuenow="{{ cnn_accuracy }}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <!-- Button Back to Dashboard -->
+        <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
+
+        <!-- CNN Explanation Section -->
+        <div class="cnn-description">
+            <h4>Understanding Convolutional Neural Networks (CNNs)</h4>
+            <p>A Convolutional Neural Network (CNN) is a class of deep learning algorithms designed to process structured grid data, such as images, audio, or text. In this project, CNNs are used to detect fake news by analyzing both the textual content and images of news articles in real-time.</p>
+            <p>CNNs excel in image classification and feature extraction by applying convolutional layers to detect patterns and structures within data. For fake news detection, CNNs analyze the news article’s text, detect contextual patterns, and identify whether the content is likely to be genuine or manipulated.</p>
+            <ul>
+                <li><b>Feature Extraction:</b> CNNs automatically extract relevant features from raw data without manual intervention, making them highly efficient for detecting subtle patterns in text and images.</li>
+                <li><b>Real-time Processing:</b> CNNs process large volumes of data in real-time, making them ideal for detecting fake news on platforms like social media or news websites.</li>
+                <li><b>Textual Analysis:</b> In this project, CNNs use word embeddings to analyze the semantic structure of text and identify misleading patterns, ensuring the accuracy of the detection system.</li>
+                <li><b>Multimodal Capabilities:</b> Besides text, CNNs can also detect fake images or videos associated with news content, leveraging their ability to identify alterations in multimedia formats.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Fake News Detection Project. All Rights Reserved.
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
